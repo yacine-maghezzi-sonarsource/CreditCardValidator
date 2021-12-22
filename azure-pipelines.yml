@@ -35,7 +35,7 @@ steps:
     
 - task: SonarQubePrepare@4
   inputs:
-    SonarQube: 'http://sq91-yacinem.eu.ngrok.io'
+    SonarQube: 'https://sq91-yacinem.eu.ngrok.io'
     scannerMode: 'MSBuild'
     projectKey: 'CreditCardValidator'
 
