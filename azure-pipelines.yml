@@ -32,3 +32,17 @@ steps:
   inputs:
     platform: '$(buildPlatform)'
     configuration: '$(buildConfiguration)'
+    
+- task: SonarQubePrepare@4
+  inputs:
+    SonarQube: 'http://sq91-yacinem.eu.ngrok.io'
+    scannerMode: 'MSBuild'
+    projectKey: 'CreditCardValidator'
+
+# Run Code Analysis task
+- task: SonarQubeAnalyze@4
+
+# Publish Quality Gate Result task
+- task: SonarQubePublish@4
+  inputs:
+    pollingTimeoutSec: '300'
