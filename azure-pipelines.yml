@@ -4,7 +4,7 @@
 # https://docs.microsoft.com/azure/devops/pipelines/apps/aspnet/build-aspnet-4
 
 trigger:
-- master
+- *
 
 pool:
   vmImage: 'windows-latest'
@@ -20,6 +20,12 @@ steps:
 - task: NuGetCommand@2
   inputs:
     restoreSolution: '$(solution)'
+    
+- task: SonarQubePrepare@5
+  inputs:
+    SonarQube: 'ADOSQ'
+    scannerMode: 'MSBuild'
+    projectKey: 'CreditCardValidator'
 
 - task: VSBuild@1
   inputs:
@@ -33,16 +39,10 @@ steps:
     platform: '$(buildPlatform)'
     configuration: '$(buildConfiguration)'
     
-- task: SonarQubePrepare@4
-  inputs:
-    SonarQube: 'https://sq91-yacinem.eu.ngrok.io'
-    scannerMode: 'MSBuild'
-    projectKey: 'CreditCardValidator'
-
 # Run Code Analysis task
-- task: SonarQubeAnalyze@4
+- task: SonarQubeAnalyze@5
 
 # Publish Quality Gate Result task
-- task: SonarQubePublish@4
+- task: SonarQubePublish@5
   inputs:
     pollingTimeoutSec: '300'
