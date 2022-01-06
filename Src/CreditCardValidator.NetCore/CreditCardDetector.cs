@@ -10,7 +10,7 @@ namespace CreditCardValidator
         public CardIssuer Brand { get; private set; }
         public string BrandName { get; private set; }
         internal bool IgnoreLengthCheck { get; private set; }
-
+        //FIXME
         public CreditCardDetector(string cardNumber)
         {
             if (!ValidationHelper.IsAValidNumber(cardNumber))

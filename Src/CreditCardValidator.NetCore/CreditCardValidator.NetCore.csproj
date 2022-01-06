@@ -26,5 +26,10 @@ CreditCardValidator helps you implementing validations for the most common credi
     <PackageReleaseNotes>
 - Fixed issue where generating random card numbers in multiple threads could cause a NullReferenceException.
     </PackageReleaseNotes>
+    <CodeAnalysisRuleSet>..\..\.sonarlint\creditcardvalidatorcsharp.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
+
+  <ItemGroup>
+    <AdditionalFiles Include="..\..\.sonarlint\creditcardvalidator\CSharp\SonarLint.xml" Link="SonarLint.xml" />
+  </ItemGroup>
 </Project>
