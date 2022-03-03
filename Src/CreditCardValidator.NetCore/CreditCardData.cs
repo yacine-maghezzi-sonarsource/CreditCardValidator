@@ -16,6 +16,7 @@ namespace CreditCardValidator
         Hipercard,
         JCB,
         Laser,
+        Test,
         Maestro,
         MasterCard,
         RuPay,
