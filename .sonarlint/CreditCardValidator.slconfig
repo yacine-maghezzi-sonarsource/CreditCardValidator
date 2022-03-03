@@ -1,0 +1,12 @@
+{
+  "ServerUri": "http://localhost:9000/",
+  "Organization": null,
+  "ProjectKey": "CreditCardValidator",
+  "ProjectName": "CreditCardValidator",
+  "Profiles": {
+    "CSharp": {
+      "ProfileKey": "AX3YF67x3_k-h5LOU7Xc",
+      "ProfileTimestamp": "2021-12-20T13:46:10Z"
+    }
+  }
+}
